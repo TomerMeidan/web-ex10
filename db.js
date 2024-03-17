@@ -28,13 +28,11 @@ function insertHardcodedData() {
     ];
 
     users.forEach(user => {
-        // Check if user already exists
         db.get(`SELECT * FROM users WHERE username = ?`, [user.username], (err, row) => {
             if (err) {
                 console.error(err.message);
             }
             if (!row) {
-                // User does not exist, insert
                 db.run(`INSERT INTO users(username, password) VALUES(?, ?)`, [user.username, user.password], function(err) {
                     if (err) {
                         return console.error(err.message);

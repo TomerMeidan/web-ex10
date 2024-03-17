@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Main Page</title>
-  </head>
-  <body>
+</head>
+<body>
     <h1>Welcome, <%= username %>!</h1>
     <h2>User Table</h2>
     <table>
-      <tr>
-        <th>ID</th>
-        <th>Username</th>
-      </tr>
-      <% users.forEach(user => { %>
-      <tr>
-        <td><%= user.id %></td>
-        <td><%= user.username %></td>
-      </tr>
-      <% }); %>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+        </tr>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+            </tr>
+        <% }); %>
     </table>
-  </body>
+    <a href="/logout">Logout</a>
+</body>
 </html>
